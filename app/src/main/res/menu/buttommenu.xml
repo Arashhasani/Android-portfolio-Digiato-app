@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/navigationnews"
+        android:icon="@drawable/ic_bottomnav_all_news"
+        android:title="اخبار" />
+
+
+    <item
+        android:id="@+id/navigationcategory"
+        android:icon="@drawable/ic_vec_bottomnav_categories"
+        android:title="دسته بندی" />
+
+
+    <item
+        android:id="@+id/navigationapp"
+        android:icon="@drawable/ic_vec_bottomnav_applications"
+        android:title="اپلیکیشن" />
+
+
+    <item
+        android:id="@+id/navigationfavorite"
+        android:icon="@drawable/ic_vec_bottomnav_favorite"
+        android:title="علاقه مندی" />
+</menu>

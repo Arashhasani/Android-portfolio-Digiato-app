@@ -1,0 +1,9 @@
+<resources>
+
+    <dimen name="toolBarHeightMIN">56dp</dimen>
+    <dimen name="toolBarHeightMAX">112dp</dimen>
+    <dimen name="iconSize">24dp</dimen>
+
+    <dimen name="progressBarSize">40dp</dimen>
+    <dimen name="appBarHeight">180dp</dimen>
+</resources>

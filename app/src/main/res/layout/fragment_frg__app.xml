@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.Frg_App">
+
+    <!-- TODO: Update blank fragment layout -->
+    <!--    <com.google.android.material.appbar.AppBarLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:id="@+id/appbarapp"-->
+    <!--        android:layout_height="wrap_content">-->
+    <!--        <androidx.appcompat.widget.Toolbar-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:id="@+id/toolbarnews"-->
+    <!--            app:layout_scrollFlags="scroll|enterAlways"-->
+    <!--            app:contentInsetEnd="0dp"-->
+    <!--            app:contentInsetLeft="0dp"-->
+    <!--            app:contentInsetRight="0dp"-->
+    <!--            app:contentInsetStart="0dp"-->
+    <!--            android:layout_height="?attr/actionBarSize"-->
+    <!--            android:background="@color/white">-->
+
+
+    <!--            <RelativeLayout-->
+    <!--                android:id="@+id/rltv"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:gravity="center"-->
+    <!--                android:paddingLeft="16dp"-->
+    <!--                android:paddingTop="16dp"-->
+    <!--                android:paddingRight="16dp">-->
+
+
+    <!--                <androidx.appcompat.widget.AppCompatImageView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="14dp"-->
+    <!--                    android:layout_centerHorizontal="true"-->
+    <!--                    android:layout_centerVertical="true"-->
+    <!--                    app:srcCompat="@drawable/img_digiato_blue"/>-->
+
+
+    <!--            </RelativeLayout>-->
+
+
+    <!--        </androidx.appcompat.widget.Toolbar>-->
+
+
+    <!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeapp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerapp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedappnetworkerror"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieAnimView"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/anim_fail" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtNoInternetText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/is"
+                android:gravity="center"
+                android:text="خطا در اتصال به اینترنت !!"
+                android:textSize="18sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRetry"
+                android:layout_width="140dp"
+                android:layout_height="54dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/is"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:text="تلاش مجدد"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/shimmerapp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/shimmer" />
+
+                <include layout="@layout/shimmer" />
+
+                <include layout="@layout/shimmer" />
+
+                <include layout="@layout/shimmer" />
+
+                <include layout="@layout/shimmer" />
+
+                <include layout="@layout/shimmer" />
+
+            </LinearLayout>
+
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

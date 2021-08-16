@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rtlapp"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:layout_margin="16dp"
+    android:layout_marginTop="32dp"
+    android:background="@color/white"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdAppImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0.0dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgAppImage"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/img_banner2"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/fade_actionbar_png_white"
+        android:paddingRight="16dp">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/is_bold"
+            android:gravity="right"
+            android:maxLines="3"
+            android:text="بهترین بازی‌های «اکشن» گوشی که می‌توانید با یک دست تجربه کنید"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <RelativeLayout
+            android:id="@+id/rltvPostInfoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_below="@+id/txtTitle"
+            android:layout_marginTop="8dp"
+            android:gravity="right|center_vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAuthorName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/is_bold"
+                android:gravity="right|center_vertical"
+                android:text="محمد باقری نیا"
+                android:textColor="#7F8180"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtReleaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/txtAuthorName"
+                android:fontFamily="@font/is_bold"
+                android:layout_marginRight="10dp"
+                android:gravity="right|center_vertical"
+                android:text="3 ساعت پیش"
+                android:textColor="#B7B9B8"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgMore"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:paddingTop="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="8dp"
+                android:scaleType="fitStart"
+                app:srcCompat="@drawable/ic_vec_more"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

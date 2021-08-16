@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultSearch">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarresultcat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarnews"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+
+            <RelativeLayout
+                android:id="@+id/rltv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgbackcat"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:rotation="180"
+                    app:srcCompat="@drawable/ic_vec_arrow_back" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtcatText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="16dp"
+                    android:layout_toLeftOf="@+id/imgbackcat"
+                    android:fontFamily="@font/is_light"
+                    android:gravity="right|center_vertical"
+                    android:textColor="#000000" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/nestedresultcatshimmer"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/shimmer" />
+
+                <include layout="@layout/shimmer" />
+
+                <include layout="@layout/shimmer" />
+
+                <include layout="@layout/shimmer" />
+
+                <include layout="@layout/shimmer" />
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/nestedresultcatnoitem">
+
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                app:lottie_rawRes="@raw/anim_empty"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="موردی یافت نشد !"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:fontFamily="@font/is"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/newstedresultcatnetworkerror">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+       <androidx.appcompat.widget.AppCompatImageView
+           android:layout_width="140dp"
+           android:layout_height="140dp"
+           android:src="@drawable/ic_vec_signal_wifi_off"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtNoInternetText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/is"
+                android:gravity="center"
+                android:text="خطا در اتصال به اینترنت !!"
+                android:textSize="18sp"/>
+
+
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+        </LinearLayout>
+
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/recyclerresultcat"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

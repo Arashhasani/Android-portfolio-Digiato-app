@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Detail">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/white"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgPic"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:transitionName="@string/transitionDetailActivityImage"/>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgBack"
+                        android:layout_width="@dimen/iconSize"
+                        android:layout_height="@dimen/iconSize"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:tint="@color/black"
+                        app:srcCompat="@drawable/ic_vec_arrow_back"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgShare"
+                        android:layout_width="@dimen/iconSize"
+                        android:layout_height="@dimen/iconSize"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="16dp"
+                        android:tint="@color/black"
+                        app:srcCompat="@drawable/ic_vec_share"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgBookmark"
+                        android:layout_width="@dimen/iconSize"
+                        android:layout_height="@dimen/iconSize"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="24dp"
+                        android:layout_toLeftOf="@+id/imgShare"
+                        android:tint="@color/black"
+                        app:srcCompat="@drawable/ic_vec_bookmark_uncheck"/>
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <RelativeLayout
+            android:id="@+id/rltvDataContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/Color_4">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/is_bold"
+                android:maxLines="3"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:paddingLeft="16dp"
+                android:paddingTop="24dp"
+                android:paddingRight="16dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:transitionName="tnTitle"/>
+
+            <RelativeLayout
+                android:id="@+id/rltvPostInfoContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtTitle"
+                android:background="@color/white"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingRight="16dp"
+                android:transitionName="tnContainer">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtAuthorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/is_bold"
+                    android:text="محمد باقری نیا"
+                    android:textColor="@color/lightGray"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtReleaseDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/txtAuthorName"
+                    android:fontFamily="@font/is_bold"
+                    android:layout_marginRight="10dp"
+                    android:text="3 ساعت پیش"
+                    android:textColor="@color/color_3"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtdescription"
+                    android:layout_marginTop="10dp"
+                    android:layoutDirection="rtl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtAuthorName"
+                    android:gravity="right"
+                    android:fontFamily="@font/is"
+                    android:text="@string/loremTextLong"
+                    android:textColor="@color/black"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lnrContainerContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rltvPostInfoContainer"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingTop="24dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp"/>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crdContainerRelatedPost"
+                android:layout_width="wrap_content"
+                android:layout_height="270dp"
+                android:layout_below="@+id/lnrContainerContent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="1.0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTextRelatedTopic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginRight="11dp"
+                        android:fontFamily="@font/is_mobile"
+                        android:gravity="right"
+                        android:text="مطالب مرتبط"
+                        android:textColor="@color/Color_1"
+                        android:textSize="14sp"/>
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
