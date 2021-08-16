@@ -202,6 +202,7 @@ public class Frg_News extends Fragment {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url,jsonArrayListener,errorListener);
         AppController.getInstance().addToRequestQueue(jsonArrayRequest);
 
+        
 
     }
 }
