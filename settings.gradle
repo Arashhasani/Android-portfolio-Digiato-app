@@ -1,3 +1,2 @@
-include ':TransitionLib'
 include ':app'
 rootProject.name = "Digiato"
